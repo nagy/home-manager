@@ -484,13 +484,13 @@ function doHelp() {
     echo
     echo "  help         Print this help"
     echo
-    echo "  edit         Open the home configuration in \$EDITOR"
+    echo "  edit         Open the home configuration in \$EDITOR (Alias: e)"
     echo
-    echo "  build        Build configuration into result directory"
+    echo "  build        Build configuration into result directory (Alias: b)"
     echo
-    echo "  instantiate  Instantiate the configuration and print the resulting derivation"
+    echo "  instantiate  Instantiate the configuration and print the resulting derivation (Alias: i)"
     echo
-    echo "  switch       Build and activate configuration"
+    echo "  switch       Build and activate configuration (Alias: s)"
     echo
     echo "  generations  List all home environment generations"
     echo
@@ -503,7 +503,7 @@ function doHelp() {
     echo "      interpreted as in the -d argument of the date tool. For"
     echo "      example \"-30 days\" or \"2018-01-01\"."
     echo
-    echo "  packages     List all packages installed in home-manager-path"
+    echo "  packages     List all packages installed in home-manager-path (Alias: p)"
     echo
     echo "  news         Show news entries in a pager"
     echo
@@ -523,7 +523,7 @@ while [[ $# -gt 0 ]]; do
     opt="$1"
     shift
     case $opt in
-        build|instantiate|edit|expire-generations|generations|help|news|packages|remove-generations|switch|uninstall)
+        build|b|instantiate|i|edit|e|expire-generations|generations|help|news|packages|p|remove-generations|switch|s|uninstall)
             COMMAND="$opt"
             ;;
         -A)
@@ -604,16 +604,16 @@ if [[ -z $COMMAND ]]; then
 fi
 
 case $COMMAND in
-    edit)
+    edit|e)
         doEdit
         ;;
-    build)
+    build|b)
         doBuild
         ;;
-    instantiate)
+    instantiate|i)
         doInstantiate
         ;;
-    switch)
+    switch|s)
         doSwitch
         ;;
     generations)
@@ -630,7 +630,7 @@ case $COMMAND in
             doExpireGenerations "${COMMAND_ARGS[@]}"
         fi
         ;;
-    packages)
+    packages|p)
         doListPackages
         ;;
     news)
