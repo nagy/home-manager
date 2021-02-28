@@ -49,6 +49,7 @@ let
     (loadModule ./programs/afew.nix { })
     (loadModule ./programs/alacritty.nix { })
     (loadModule ./programs/alot.nix { })
+    (loadModule ./programs/amfora.nix { })
     (loadModule ./programs/aria2.nix { })
     (loadModule ./programs/astroid.nix { })
     (loadModule ./programs/autojump.nix { })

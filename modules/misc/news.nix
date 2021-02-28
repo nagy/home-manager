@@ -2029,6 +2029,13 @@ in
           A new module is available: 'programs.foot'.
         '';
       }
+
+      {
+        time = "2021-05-20T19:00:00+00:00";
+        message = ''
+          A new module is available: 'programs.amfora'.
+        '';
+      }
     ];
   };
 }
